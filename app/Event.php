@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     public function users() {
-        return $this->belongsToMany('app\user', 'participate');
+        return $this->belongsToMany('App\user', 'participate');
     }
 }

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Place extends Model
 {
     public function users() {
-        return $this->belongsToMany('app\User', 'addresses');
+        return $this->belongsToMany('App\User', 'addresses');
     }
 }

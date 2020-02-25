@@ -7,9 +7,9 @@
 @foreach ($articles as $article)
     <h1>Car {{ $article->id }}</h1>
     <ul>
-        <li>Make: {{ $article->make }}</li>
+        <li>Name: {{ $article->name }}</li>
         <li>Price: {{ $article->price }}</li>
-        <li>Description: {{ $article->desfription }}</li>
+        <li>Description: {{ $article->description }}</li>
         <li>Stock: {{ $article->stock }}</li>
     </ul>
 @endforeach

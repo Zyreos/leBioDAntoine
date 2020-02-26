@@ -12,6 +12,13 @@
         <li>Price: {{ $article->price }}</li>
         <li>Description: {{ $article->description }}</li>
         <li>Stock: {{ $article->stock }}</li>
+        <li>Catégories associées :
+            <ul>
+                @foreach($article->artCategories as $artCategory)
+                    <li>{{ $artCategory->name }}</li>
+                @endforeach
+            </ul>
+        </li>
     </ul>
 
     <div>

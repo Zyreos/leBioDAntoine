@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class ArtCategory extends Model
 {
     public function categories() {
-        return $this->belongsToMany('App\Article', 'article_artCategory');
+        return $this->belongsToMany('App\Article', 'article_art_category');
     }
 }

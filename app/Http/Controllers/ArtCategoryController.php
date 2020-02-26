@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\ArtCategory;
 use Illuminate\Http\Request;
+
+use App\ArtCategory;
 
 class ArtCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+        $artCategories = ArtCategory::paginate(10);
+        return view('articlescategories.index', array('artCategory' => $artCategories));
     }
 
     /**

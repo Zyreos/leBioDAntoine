@@ -7,6 +7,7 @@
 <h1>Liste des Articles</h1>
 {{ $articles->links() }}
 <a href="{{ route('articles.create') }}">Création d'un article</a>
+<a href="{{ route('articlecategories.index') }}">Gestion des catégories</a>
 @foreach ($articles as $article)
     <h2><a href="{{ route('articles.show', $article->id) }}">Article {{ $article->id }}</a> </h2>
     <ul>

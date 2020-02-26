@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtCategoriesTable extends Migration
+class CreateUserOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateArtCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('artCategories', function (Blueprint $table) {
+        Schema::create('user_order', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('name');
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('order_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
     }
 
@@ -27,6 +30,6 @@ class CreateArtCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('user_order');
     }
 }

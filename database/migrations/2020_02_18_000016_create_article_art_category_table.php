@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArticleOrderTable extends Migration
+class CreateArticleArtCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateArticleOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('article_order', function (Blueprint $table) {
+        Schema::create('article_art_category', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('amount');
-            $table->bigInteger('order_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('article_id')->unsigned();
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('category_id')->references('id')->on('art_categories');
             $table->foreign('article_id')->references('id')->on('articles');
         });
     }
@@ -31,6 +30,6 @@ class CreateArticleOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('article_order');
+        Schema::dropIfExists('article_art_category');
     }
 }

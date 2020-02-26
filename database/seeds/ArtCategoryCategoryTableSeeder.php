@@ -12,7 +12,7 @@ class ArtCategoryCategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 100; $i++)
+        for($i = 1; $i <= 50; $i++)
         {
             $numbers = range(1, 10);
             shuffle($numbers);
@@ -20,8 +20,8 @@ class ArtCategoryCategoryTableSeeder extends Seeder
             for($j = 1; $j <= $n; $j++)
             {
                 DB::table('article_art_category')->insert(array(
-                    'article_id'          => $i,
-                    'article_category_id' => $numbers[$j]
+                    'article_id'      => $i,
+                    'art_category_id' => $numbers[$j]
                 ));
             }
         }

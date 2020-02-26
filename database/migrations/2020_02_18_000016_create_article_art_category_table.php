@@ -16,9 +16,9 @@ class CreateArticleArtCategoryTable extends Migration
         Schema::create('article_art_category', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('art_category_id')->unsigned();
             $table->bigInteger('article_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('art_categories');
+            $table->foreign('art_category_id')->references('id')->on('art_categories');
             $table->foreign('article_id')->references('id')->on('articles');
         });
     }

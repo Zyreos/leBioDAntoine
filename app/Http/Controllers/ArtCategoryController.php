@@ -16,7 +16,7 @@ class ArtCategoryController extends Controller
     public function index()
     {
         $artCategories = ArtCategory::paginate(10);
-        return view('articlescategories.index', array('artCategory' => $artCategories));
+        return view('articlecategories.index', compact("artCategories"));
     }
 
     /**

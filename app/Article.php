@@ -18,7 +18,7 @@ class Article extends Model
         return $this->belongsToMany('App\Content', 'articles_contents');
     }
 
-    public function categories() {
-        return $this->belongsToMany('App\Category', 'belongs');
+    public function artCategories() {
+        return $this->belongsToMany('App\ArtCategory', 'article_artCategory');
     }
 }

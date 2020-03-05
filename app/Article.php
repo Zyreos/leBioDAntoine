@@ -19,6 +19,6 @@ class Article extends Model
     }
 
     public function artCategories() {
-        return $this->belongsToMany('App\ArtCategory', 'article_artCategory');
+        return $this->belongsToMany('App\ArtCategory', 'article_art_category');
     }
 }
